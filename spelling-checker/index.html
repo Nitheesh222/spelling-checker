@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling & Grammar Checker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>SpellCheck<span class="highlight">Pro</span></h1>
+            <p>Write with confidence.</p>
+        </header>
+
+        <main>
+            <div class="editor-wrapper">
+                <div class="backdrop" id="backdrop">
+                    <div class="highlights" id="highlights"></div>
+                </div>
+                <textarea id="editor" placeholder="Type or paste your text here to check spelling and grammar..."></textarea>
+            </div>
+            
+            <div class="controls">
+                <div class="stats">
+                    <span id="char-count">0 characters</span> • <span id="word-count">0 words</span>
+                </div>
+                <button id="check-btn" class="primary-btn">Check Text</button>
+            </div>
+            
+            <div class="loader-container hidden" id="loader">
+                <div class="spinner"></div>
+                <span>Analyzing text...</span>
+            </div>
+
+            <div class="results-panel" id="results-panel">
+                <div class="results-header">
+                    <h2>Suggestions</h2>
+                    <span class="badge hidden" id="issue-count-badge">0</span>
+                </div>
+                <div id="suggestions-list" class="suggestions-list">
+                    <div class="empty-state">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <p>No issues found! Your text looks great.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
